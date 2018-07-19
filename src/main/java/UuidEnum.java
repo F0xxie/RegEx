@@ -1,0 +1,3 @@
+public enum UuidEnum {
+    DIVIDED_UUID, FRAMED_UUID, DIVIDED_FRAMED_UUID, UUID
+}
