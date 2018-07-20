@@ -5,16 +5,15 @@ import java.util.UUID;
 public class Main {
 
     public static void main(String[] args){
-        String uuid = UUID.randomUUID().toString();
-        uuid = uuid.replaceAll("-", "");
-        String s = uuid;
+        String s = UUID.randomUUID().toString();
+        s = s.replaceAll("-", "");
 
-        System.out.println("Default: " + uuid);
-
-        //System.out.println("from\nstock\ndf\nf\nd");
-
-        UuidTransformer.UUIDTransformer(s, UuidEnum.UUID, UuidEnum.FRAMED_UUID);
-        UuidTransformer.UUIDTransformer(s, UuidEnum.UUID, UuidEnum.DIVIDED_UUID);
-        UuidTransformer.UUIDTransformer(s, UuidEnum.UUID, UuidEnum.DIVIDED_FRAMED_UUID);
+        System.out.println("Default: " + s);
+        UuidTransformer.UUIDTransformer(s, UuidEnum.FRAMED_UUID.getFormat(), UuidEnum.DIVIDED_FRAMED_UUID);
+        UuidTransformer.UUIDTransformer(s, UuidEnum.UUID.getFormat(), UuidEnum.DIVIDED_FRAMED_UUID);
+        UuidTransformer.UUIDTransformer(s, UuidEnum.FRAMED_UUID.getFormat(), UuidEnum.FRAMED_UUID);
+        UuidTransformer.UUIDTransformer(s, UuidEnum.UUID.getFormat(), UuidEnum.DIVIDED_UUID);
+        UuidTransformer.UUIDTransformer(s, UuidEnum.UUID.getFormat(), UuidEnum.DIVIDED_FRAMED_UUID);
+        UuidTransformer.UUIDTransformer(s, UuidEnum.DIVIDED_UUID.getFormat(), UuidEnum.DIVIDED_FRAMED_UUID);
     }
 }
